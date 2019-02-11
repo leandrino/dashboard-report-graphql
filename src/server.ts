@@ -20,9 +20,6 @@ router.all(
 router.post('/update-data', (ctx: Koa.Context) => {
   ctx.body = {
     message: 'success',
-    data: {
-      received: ctx.response.body,
-    },
   }
 })
 

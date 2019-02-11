@@ -12,4 +12,4 @@ COPY . .
 
 RUN ls -al
 
-#CMD [ "npm", "bundle" ]
+CMD [ "ts-node", "./src/server.ts" ]
