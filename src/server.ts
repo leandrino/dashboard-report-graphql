@@ -1,28 +1,30 @@
-import * as Koa from 'koa'
-import * as Router from 'koa-router'
-import graphqlHTTP = require('koa-graphql')
-import { DB_PATH, DB_USER, DB_PASS } from './config/environment-variables'
+import * as Koa from "koa";
+import * as Router from "koa-router";
+import graphqlHTTP = require("koa-graphql");
+import { DB_PATH, DB_USER, DB_PASS } from "./config/environment-variables";
+import schema from "./graphql/schema";
 
-const app = new Koa()
-const router = new Router()
+const app = new Koa();
+const router = new Router();
 
 app.use(async (ctx: Koa.Context, next: any) => {
-  await next()
-})
+  await next();
+});
 
 router.all(
-  '/graphql',
+  "/graphql",
   graphqlHTTP({
-    graphiql: true,
+    schema,
+    graphiql: true
   })
-)
+);
 
-router.post('/update-data', (ctx: Koa.Context) => {
+router.post("/update-data", (ctx: Koa.Context) => {
   ctx.body = {
-    message: 'success',
-  }
-})
+    message: "success"
+  };
+});
 
-app.use(router.routes())
+app.use(router.routes());
 
-app.listen(3000)
+app.listen(3000);
