@@ -2,31 +2,22 @@ import {
   GraphQLID,
   GraphQLObjectType,
   GraphQLString,
-  GraphQLFloat
+  GraphQLFloat,
+  GraphQLList
 } from "graphql";
 
-export const hartType: GraphQLObjectType<any, any> = new GraphQLObjectType({
+import AxisType from "./axis-type";
+
+export const ChartType: GraphQLObjectType<any, any> = new GraphQLObjectType({
   name: "Chart",
   description: "Select a chart type and be happy",
   fields: () => ({
     _id: { type: GraphQLID },
-    x: { type: GraphQLFloat },
-    y: { type: GraphQLFloat }
+    name: { type: GraphQLString },
+    axisNameX: { type: GraphQLString },
+    axisNameY: { type: GraphQLString },
+    axis: { type: new GraphQLList(AxisType) }
   })
 });
 
 export default ChartType;
-
-/*
- * query {
- *  charts (type: ciclomatic){
- *   name
- *   nameX
- *   nameY
- *   eixos {
- *     x
- *     y
- *   }
- * }
- *}
- */
