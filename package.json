@@ -12,7 +12,7 @@
     "@types/koa": "^2.0.46",
     "@types/koa-router": "^7.0.32",
     "babel-loader": "^8.0.2",
-    "dotenv": "^6.0.0",
+    "dotenv": "^6.2.0",
     "husky": "^1.1.0",
     "jest": "^23.6.0",
     "nodemon": "^1.18.4",
