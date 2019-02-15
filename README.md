@@ -8,13 +8,18 @@ This example was created for development environment, no has optimization to pro
 ### Dependence
 
 Basic environment:
-- MongoDB
+- Postgres (docker-compose)
 - Node
 - Yarn
 
-With docker: (Only Windows 10 Pro+ or Unix like environment)
-- Docker
-- Docker Compose
+.env file: basic setup with postgres
+
+- POSTGRES_USER= Postgres database user
+- POSTGRES_PASSWORD= Postgres database user
+- POSTGRES_HOST= Postgres database user
+- POSTGRES_PORT= Postgres database user
+- POSTGRES_DATABASE= Postgres database user
+
 
 ### Start commands
 
@@ -25,12 +30,6 @@ yarn server:watch
 If use docker, you can start with:
 
 ```bash
-# Start environment and wait.
-docker-compose up
-
-# Enter in container
-docker-compose exec app bash
-
 # Start server
 yarn server:watch
 ```
@@ -44,8 +43,5 @@ yarn lint
 ```
 
 # TODO
-- [x] ~~Add TSlint~~
-- [x] ~~Add Environment variables~~
-- [x] ~~Fix categories query and mutation~~
 - [ ] Unit tests
 - [ ] Add [Dataloader](https://www.youtube.com/watch?v=OQTnXNCDywA) 

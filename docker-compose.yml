@@ -1,31 +1,15 @@
 version: '3'
 services:
-  app:
-    container_name: graphql-app-koa
-    build: .
+  postgres:
+    image: postgres:10
+    restart: always
+    container_name: postgres-drg
+    env_file:
+      - .env
+    environment:
+      - POSTGRES_USER
+      - POSTGRES_PASSWORD
     volumes:
-      - ./:/usr/src/app
+      - ./postgres-data:/var/lib/postgresql/data
     ports:
-      - 3000:3000
-    command: sh -c "yarn install && tail -f /dev/null"
-    env_file:
-      - .env
-    environment:
-      - NODE_ENV=development
-      - MONGO_INITDB_ROOT_USERNAME
-      - MONGO_INITDB_ROOT_PASSWORD
-      - MONGO_PATH
-
-  mongodb:
-    image: mongo:latest
-    # restart: always
-    container_name: graphql-mongodb-koa
-    env_file:
-      - .env
-    environment:
-      - MONGO_INITDB_ROOT_USERNAME
-      - MONGO_INITDB_ROOT_PASSWORD
-    #    volumes:
-    #    - ./data/db:/data/db
-    ports:
-      - 27017:27017
+      - 5432:5432
