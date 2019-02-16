@@ -1,5 +1,6 @@
 import * as Koa from "koa";
 import * as Router from "koa-router";
+import * as cors from "@koa/cors";
 import graphqlHTTP = require("koa-graphql");
 import schema from "./graphql/schema";
 import { postgresDB } from "./database/postgres-db";
@@ -27,6 +28,11 @@ const bootstrap = async () => {
     };
   });
 
+  app.use(
+    cors({
+      "Access-Control-Allow-Origin": "*"
+    })
+  );
   app.use(router.routes());
 
   app.listen(3000);
