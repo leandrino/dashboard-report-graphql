@@ -35,7 +35,8 @@
     "server:watch": "nodemon --watch 'src/**/*' -e ts,tsx --exec 'ts-node' ./src/server.ts",
     "test": "jest",
     "type-check": "tsc",
-    "type-check:watch": "npm run type-check -- --watch"
+    "type-check:watch": "npm run type-check -- --watch",
+    "relay": "relay-compiler --src ./src --schema ./schema.graphql --extensions ts tsx"
   },
   "jest": {
     "transform": {
@@ -59,11 +60,15 @@
   },
   "license": "MIT",
   "dependencies": {
-    "graphql": "^14.0.2",
+    "@koa/cors": "^2.2.3",
+    "babel-plugin-relay": "^2.0.0",
+    "graphql": "^14.1.1",
     "koa": "^2.5.3",
     "koa-graphql": "^0.7.5",
     "koa-router": "^7.4.0",
+    "moment": "^2.24.0",
     "pg": "^7.8.0",
+    "relay-compiler": "^2.0.0",
     "typeorm": "^0.2.13"
   }
 }
