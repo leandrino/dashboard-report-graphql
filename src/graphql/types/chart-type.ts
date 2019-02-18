@@ -14,6 +14,7 @@ export const ChartType: GraphQLObjectType<any, any> = new GraphQLObjectType({
   fields: () => ({
     id: { type: GraphQLID },
     name_project: { type: GraphQLString },
+    chartName: { type: GraphQLString },
     axisNameX: { type: GraphQLString },
     axisNameY: { type: GraphQLString },
     axis: { type: new GraphQLList(AxisType) }

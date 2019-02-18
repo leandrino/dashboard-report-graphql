@@ -35,6 +35,7 @@ const queries = {
 
       const resultData = {
         name_project: result[0].name_project,
+        chartName: "Cobertura dos testes",
         axisNameY: "Data do build",
         axisNameX: "Linhas cobertas",
         axis: mountAxis
