@@ -13,7 +13,7 @@ export const ChartType: GraphQLObjectType<any, any> = new GraphQLObjectType({
   description: "Select a chart type and be happy",
   fields: () => ({
     id: { type: GraphQLID },
-    name_project: { type: GraphQLString },
+    nameProject: { type: GraphQLString },
     chartName: { type: GraphQLString },
     axisNameX: { type: GraphQLString },
     axisNameY: { type: GraphQLString },
