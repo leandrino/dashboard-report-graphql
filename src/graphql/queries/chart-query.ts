@@ -1,18 +1,53 @@
 import { ChartType } from "../types/chart-type";
-import { GraphQLList } from "graphql";
+import { GraphQLNonNull, GraphQLString } from "graphql";
 import { getConnection } from "typeorm";
 import * as moment from "moment";
+
+interface IChartQueryType {
+  str: string;
+  chartName: string;
+}
 
 const queries = {
   chart: {
     type: ChartType,
-    resolve: async () => {
+    args: {
+      chartType: {
+        name: "chartType",
+        type: new GraphQLNonNull(GraphQLString)
+      }
+    },
+    resolve: async (root, params) => {
+      let query: IChartQueryType = {
+        str: "",
+        chartName: ""
+      };
+
+      switch (params.chartType) {
+        case "coverage":
+          query = {
+            str:
+              "cast(aa.qt_covered as float) / cast(aa.qt_line as float) * 100 y",
+            chartName: "Cobertura de testes"
+          };
+          break;
+        case "lines":
+          query = { str: "aa.qt_line y", chartName: "Quantidade de linhas" };
+          break;
+        case "cyclomatic_mod":
+          query = {
+            str: "aa.qt_routinecyclomaticmod y",
+            chartName: "Complexidade Ciclomática"
+          };
+          break;
+      }
+
       const chartQuery: string = `
       select
         aa.id_project,
         (select nm_project from project xx where xx.id_project = aa.id_project) name_project,
         aa.dt_build x,
-        cast(aa.qt_covered as float) / cast(aa.qt_line as float) * 100 y 
+        ${query.str}
       from
         build aa,
         (select
@@ -34,10 +69,10 @@ const queries = {
       });
 
       const resultData = {
-        name_project: result[0].name_project,
-        chartName: "Cobertura dos testes",
-        axisNameY: "Data do build",
-        axisNameX: "Linhas cobertas",
+        nameProject: result[0].name_project,
+        chartName: query.chartName,
+        axisNameY: "Eixo Y",
+        axisNameX: "Eixo X",
         axis: mountAxis
       };
       return resultData;
