@@ -1,4 +1,4 @@
-FROM node:latest
+FROM node:alpine AS build
 
 WORKDIR /usr/src/app/
 
@@ -10,6 +10,10 @@ RUN yarn install
 
 COPY . .
 
-RUN ls -al
+RUN tsc
 
-CMD [ "ts-node", "./src/server.ts" ]
+WORKDIR /usr/src/app/dist
+
+EXPOSE 3000
+
+CMD [ "node", "server.js" ]

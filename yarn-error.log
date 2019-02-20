@@ -1,5 +1,5 @@
 Arguments: 
-  /home/leandrino/.asdf/installs/nodejs/11.9.0/bin/node /home/leandrino/.asdf/installs/nodejs/11.9.0/.npm/bin/yarn add dotenv
+  /home/leandrino/.asdf/installs/nodejs/11.9.0/bin/node /home/leandrino/.asdf/installs/nodejs/11.9.0/.npm/bin/yarn install
 
 PATH: 
   /home/leandrino/.asdf/installs/nodejs/11.9.0/bin:/home/leandrino/.asdf/installs/nodejs/11.9.0/.npm/bin::/home/leandrino/.asdf/shims:/home/leandrino/.asdf/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
@@ -14,7 +14,7 @@ Platform:
   linux x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/event-stream/-/event-stream-3.3.6.tgz: Request failed "404 Not Found"
+  Error: https://registry.yarnpkg.com/flatmap-stream/-/flatmap-stream-0.1.0.tgz: Request failed "404 Not Found"
       at ResponseError.ExtendableBuiltin (/home/leandrino/.asdf/installs/nodejs/11.9.0/.npm/lib/node_modules/yarn/lib/cli.js:702:66)
       at new ResponseError (/home/leandrino/.asdf/installs/nodejs/11.9.0/.npm/lib/node_modules/yarn/lib/cli.js:808:124)
       at Request.<anonymous> (/home/leandrino/.asdf/installs/nodejs/11.9.0/.npm/lib/node_modules/yarn/lib/cli.js:66325:16)
@@ -41,7 +41,7 @@ npm manifest:
       "@types/koa": "^2.0.46",
       "@types/koa-router": "^7.0.32",
       "babel-loader": "^8.0.2",
-      "dotenv": "^6.0.0",
+      "dotenv": "^6.2.0",
       "husky": "^1.1.0",
       "jest": "^23.6.0",
       "nodemon": "^1.18.4",
@@ -64,7 +64,8 @@ npm manifest:
       "server:watch": "nodemon --watch 'src/**/*' -e ts,tsx --exec 'ts-node' ./src/server.ts",
       "test": "jest",
       "type-check": "tsc",
-      "type-check:watch": "npm run type-check -- --watch"
+      "type-check:watch": "npm run type-check -- --watch",
+      "relay": "relay-compiler --src ./src --schema ./schema.graphql --extensions ts tsx"
     },
     "jest": {
       "transform": {
@@ -88,11 +89,15 @@ npm manifest:
     },
     "license": "MIT",
     "dependencies": {
-      "graphql": "^14.0.2",
+      "@koa/cors": "^2.2.3",
+      "babel-plugin-relay": "^2.0.0",
+      "graphql": "^14.1.1",
       "koa": "^2.5.3",
       "koa-graphql": "^0.7.5",
       "koa-router": "^7.4.0",
+      "moment": "^2.24.0",
       "pg": "^7.8.0",
+      "relay-compiler": "^2.0.0",
       "typeorm": "^0.2.13"
     }
   }
