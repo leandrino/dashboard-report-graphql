@@ -1,7 +1,7 @@
 import * as Koa from "koa";
 import * as Router from "koa-router";
 import * as cors from "@koa/cors";
-import graphqlHTTP = require("koa-graphql");
+import * as graphqlHTTP from "koa-graphql";
 import schema from "./graphql/schema";
 import { postgresDB } from "./database/postgres-db";
 const app = new Koa();

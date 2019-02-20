@@ -1,9 +1,19 @@
 version: '3'
 services:
-  postgres:
+  app:
+    image: leandrino/dashboard-report-graphql
+    container_name: dashboard-report-graphql
+    env_file:
+      - .env
+    ports:
+      - 3000:3000
+    links:
+      - postgresDB
+
+  postgresDB:
     image: postgres:10
     restart: always
-    container_name: postgres-drg
+    container_name: postgresDB 
     env_file:
       - .env
     environment:
