@@ -1,5 +1,5 @@
 Arguments: 
-  /home/leandrino/.asdf/installs/nodejs/11.9.0/bin/node /home/leandrino/.asdf/installs/nodejs/11.9.0/.npm/bin/yarn install
+  /home/leandrino/.asdf/installs/nodejs/11.9.0/bin/node /home/leandrino/.asdf/installs/nodejs/11.9.0/.npm/bin/yarn add graphql-iso-date
 
 PATH: 
   /home/leandrino/.asdf/installs/nodejs/11.9.0/bin:/home/leandrino/.asdf/installs/nodejs/11.9.0/.npm/bin::/home/leandrino/.asdf/shims:/home/leandrino/.asdf/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
@@ -14,7 +14,7 @@ Platform:
   linux x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/flatmap-stream/-/flatmap-stream-0.1.0.tgz: Request failed "404 Not Found"
+  Error: https://registry.yarnpkg.com/event-stream/-/event-stream-3.3.6.tgz: Request failed "404 Not Found"
       at ResponseError.ExtendableBuiltin (/home/leandrino/.asdf/installs/nodejs/11.9.0/.npm/lib/node_modules/yarn/lib/cli.js:702:66)
       at new ResponseError (/home/leandrino/.asdf/installs/nodejs/11.9.0/.npm/lib/node_modules/yarn/lib/cli.js:808:124)
       at Request.<anonymous> (/home/leandrino/.asdf/installs/nodejs/11.9.0/.npm/lib/node_modules/yarn/lib/cli.js:66325:16)

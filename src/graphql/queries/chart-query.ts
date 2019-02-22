@@ -15,6 +15,14 @@ const queries = {
       chartType: {
         name: "chartType",
         type: new GraphQLNonNull(GraphQLString)
+      },
+      dateStart: {
+        name: "dateStart",
+        type: GraphQLString
+      },
+      dateEnd: {
+        name: "dateEnd",
+        type: GraphQLString
       }
     },
     resolve: async (root, params) => {
