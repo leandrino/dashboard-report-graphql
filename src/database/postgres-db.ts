@@ -1,4 +1,4 @@
-// tslint:disable:no-console
+// tslint:disable
 import { createConnection } from "typeorm";
 import {
   DB_USER,
@@ -13,7 +13,7 @@ export const postgresDB = async () => {
   return createConnection({
     type: "postgres",
     host: DB_HOST,
-    port: 5432,
+    port: parseInt(DB_PORT),
     username: DB_USER,
     password: DB_PASS,
     database: DB_DATABASE,
