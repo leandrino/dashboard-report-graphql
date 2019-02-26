@@ -1,4 +1,5 @@
 {
+  "name": "dashboard-report-graphql",
   "devDependencies": {
     "@babel/cli": "^7.0.0",
     "@babel/core": "^7.0.1",
@@ -63,6 +64,7 @@
     "@koa/cors": "^2.2.3",
     "babel-plugin-relay": "^2.0.0",
     "graphql": "^14.1.1",
+    "graphql-iso-date": "^3.6.1",
     "koa": "^2.5.3",
     "koa-graphql": "^0.7.5",
     "koa-router": "^7.4.0",

@@ -1,14 +1,18 @@
 version: '3'
 services:
-  # app:
-  #   image: leandrino/dashboard-report-graphql
-  #   container_name: dashboard-report-graphql
-  #   env_file:
-  #     - .env
-  #   ports:
-  #     - 3000:3000
-  #   links:
-  #     - postgresDB
+  app:
+    image: leandrino/dashboard-report-graphql
+    build: .
+    container_name: dashboard-report-graphql
+    env_file:
+      - .env
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/usr/src/app
+    links:
+      - postgresDB
+    command: sh -c "yarn server:watch"
 
   postgresDB:
     image: postgres:10
