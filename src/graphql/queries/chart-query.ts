@@ -1,6 +1,7 @@
 import { ChartType } from "../types/chart-type";
 import { GraphQLNonNull, GraphQLString } from "graphql";
 import { getConnection } from "typeorm";
+import { GraphQLDateTime } from "graphql-iso-date";
 import * as moment from "moment";
 
 interface IChartQueryType {
@@ -18,11 +19,11 @@ const queries = {
       },
       dateStart: {
         name: "dateStart",
-        type: GraphQLString
+        type: GraphQLDateTime
       },
       dateEnd: {
         name: "dateEnd",
-        type: GraphQLString
+        type: GraphQLDateTime
       }
     },
     resolve: async (root, params) => {
@@ -63,8 +64,12 @@ const queries = {
             max(id_build) id_build
           from build
           where
-            dt_build >= '2019-02-12 00:00:00'
-            and dt_build <= '2019-02-15 23:59:59'
+            dt_build >= '${moment(params.dateStart).format(
+              "YYYY-MM-DD HH:mm:SS"
+            )}'
+            and dt_build <= '${moment(params.dateEnd).format(
+              "YYYY-MM-DD HH:mm:SS"
+            )}'
           group by id_project, cast(dt_build as date)
           order by id_project, id_build) as tmp
         where
@@ -76,14 +81,13 @@ const queries = {
         return { x: item.x, y: `${item.y}` };
       });
 
-      const resultData = {
+      return {
         nameProject: result[0].name_project,
         chartName: query.chartName,
         axisNameY: "Eixo Y",
         axisNameX: "Eixo X",
         axis: mountAxis
       };
-      return resultData;
     }
   }
 };
