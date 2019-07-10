@@ -37,7 +37,9 @@
     "test": "jest",
     "type-check": "tsc",
     "type-check:watch": "npm run type-check -- --watch",
-    "relay": "relay-compiler --src ./src --schema ./schema.graphql --extensions ts tsx"
+    "relay": "relay-compiler --src ./src --schema ./schema.graphql --extensions ts tsx",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "jest": {
     "transform": {
@@ -71,6 +73,8 @@
     "moment": "^2.24.0",
     "pg": "^7.8.0",
     "relay-compiler": "^2.0.0",
-    "typeorm": "^0.2.13"
-  }
+    "typeorm": "^0.2.13",
+    "snyk": "^1.189.0"
+  },
+  "snyk": true
 }
