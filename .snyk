@@ -1,5 +1,5 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.13.5
+version: v1.14.1
 ignore: {}
 # patches apply the minimum changes required to fix a vulnerability
 patch:
@@ -26,3 +26,48 @@ patch:
         patched: '2019-07-04T00:20:33.638Z'
     - relay-compiler > babel-preset-fbjs > @babel/plugin-proposal-class-properties > @babel/helper-create-class-features-plugin > @babel/helper-replace-supers > @babel/traverse > @babel/helper-function-name > @babel/template > @babel/types > lodash:
         patched: '2019-07-04T00:20:33.638Z'
+  SNYK-JS-LODASH-567746:
+    - snyk > lodash:
+        patched: '2020-05-01T00:21:05.185Z'
+    - relay-compiler > @babel/traverse > lodash:
+        patched: '2020-05-01T00:21:05.185Z'
+    - snyk > @snyk/dep-graph > lodash:
+        patched: '2020-05-01T00:21:05.185Z'
+    - snyk > inquirer > lodash:
+        patched: '2020-05-01T00:21:05.185Z'
+    - snyk > snyk-config > lodash:
+        patched: '2020-05-01T00:21:05.185Z'
+    - snyk > snyk-mvn-plugin > lodash:
+        patched: '2020-05-01T00:21:05.185Z'
+    - snyk > snyk-nodejs-lockfile-parser > lodash:
+        patched: '2020-05-01T00:21:05.185Z'
+    - snyk > snyk-nuget-plugin > lodash:
+        patched: '2020-05-01T00:21:05.185Z'
+    - relay-compiler > @babel/traverse > @babel/generator > lodash:
+        patched: '2020-05-01T00:21:05.185Z'
+    - relay-compiler > babel-preset-fbjs > @babel/plugin-transform-block-scoping > lodash:
+        patched: '2020-05-01T00:21:05.185Z'
+    - snyk > @snyk/dep-graph > graphlib > lodash:
+        patched: '2020-05-01T00:21:05.185Z'
+    - snyk > snyk-go-plugin > graphlib > lodash:
+        patched: '2020-05-01T00:21:05.185Z'
+    - snyk > snyk-nodejs-lockfile-parser > graphlib > lodash:
+        patched: '2020-05-01T00:21:05.185Z'
+    - snyk > snyk-php-plugin > @snyk/composer-lockfile-parser > lodash:
+        patched: '2020-05-01T00:21:05.185Z'
+    - relay-compiler > @babel/traverse > @babel/helper-split-export-declaration > @babel/types > lodash:
+        patched: '2020-05-01T00:21:05.185Z'
+    - relay-compiler > babel-preset-fbjs > @babel/plugin-transform-modules-commonjs > @babel/helper-module-transforms > lodash:
+        patched: '2020-05-01T00:21:05.185Z'
+    - relay-compiler > @babel/traverse > @babel/helper-function-name > @babel/template > @babel/types > lodash:
+        patched: '2020-05-01T00:21:05.185Z'
+    - relay-compiler > babel-preset-fbjs > @babel/plugin-transform-parameters > @babel/helper-call-delegate > @babel/traverse > lodash:
+        patched: '2020-05-01T00:21:05.185Z'
+    - relay-compiler > babel-preset-fbjs > @babel/plugin-proposal-class-properties > @babel/helper-create-class-features-plugin > @babel/helper-replace-supers > @babel/traverse > lodash:
+        patched: '2020-05-01T00:21:05.185Z'
+    - relay-compiler > babel-preset-fbjs > @babel/plugin-proposal-class-properties > @babel/helper-create-class-features-plugin > @babel/helper-replace-supers > @babel/traverse > @babel/generator > lodash:
+        patched: '2020-05-01T00:21:05.185Z'
+    - relay-compiler > babel-preset-fbjs > @babel/plugin-proposal-class-properties > @babel/helper-create-class-features-plugin > @babel/helper-replace-supers > @babel/traverse > @babel/helper-split-export-declaration > @babel/types > lodash:
+        patched: '2020-05-01T00:21:05.185Z'
+    - relay-compiler > babel-preset-fbjs > @babel/plugin-proposal-class-properties > @babel/helper-create-class-features-plugin > @babel/helper-replace-supers > @babel/traverse > @babel/helper-function-name > @babel/template > @babel/types > lodash:
+        patched: '2020-05-01T00:21:05.185Z'
