@@ -72,7 +72,7 @@
     "koa-router": "^7.4.0",
     "moment": "^2.24.0",
     "pg": "^7.8.0",
-    "relay-compiler": "^2.0.0",
+    "relay-compiler": "^10.0.0",
     "typeorm": "^0.2.13",
     "snyk": "^1.189.0"
   },
